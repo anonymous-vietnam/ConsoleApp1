@@ -3,7 +3,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 internal class Program
 {
-    private static void Main(string[] args)
+    private static void Main1(string[] args)
     {
         int number1 = 10;
         int number2 = 12;
