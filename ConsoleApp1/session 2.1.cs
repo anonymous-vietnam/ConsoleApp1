@@ -216,7 +216,7 @@ namespace caohuy
                 Console.WriteLine("Learning ability: Poor");
             }
         }
-        private static void Main(string[] args)
+        private static void Main3(string[] args)
         {
             
         }

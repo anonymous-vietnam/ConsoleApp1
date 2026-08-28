@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace ConsoleApp1
 {
@@ -102,19 +103,97 @@ namespace ConsoleApp1
                 Console.WriteLine($"{ca} là kí hiệu khác.");
             }
         }
-        private static void Main3(string[] args)
+        static void Bai_6()
         {
             Console.Write("Enter a:");
             double a = Convert.ToDouble(Console.ReadLine());
             Console.Write("Enter b:");
             double b = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Enter c:"); 
+            Console.Write("Enter c:");
             double c = Convert.ToDouble(Console.ReadLine());
-
-
-
-
+            double delta = Math.Pow(b, 2) - 4 * a * c;
+            if ( a == 0 )
+            {
+                double ff = -c / b;
+                Console.WriteLine($"The equation has x = {ff}");
+            }
+            if (delta < 0)
+                Console.WriteLine("The equation has no real roots.");
+            if (delta == 0)
+            {
+                double e = -b / (2f * a);
+                Console.WriteLine($"The equation has one real root: {e}");
+            }
+            if ( delta >0)
+            {
+                double x1 = (-b + Math.Sqrt(delta)) / (2 * a);
+                double x2 = (-b - Math.Sqrt(delta)) / (2 * a);
+                Console.WriteLine($"The equation has two real roots: {x1} and {x2}");
+            }
+        }
+        static void Bai_7_1()
+        {
+            Console.Write("Enter your number:");
+            int number = Convert.ToInt32(Console.ReadLine());
+            if (number % 2 == 0)
+            {
+                Console.WriteLine("The number is even.");
+            }
+            else
+            {
+                Console.WriteLine("The number is odd.");
+            }
+        }
+        static void Bai_7_2()
+        {
+            Console.Write("Enter first number:");
+            double num1 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Enter second number:");
+            double num2 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Enter third number:");
+            double num3 = Convert.ToDouble(Console.ReadLine());
+            double[] aray = { num1, num2, num3 };
+            double max = aray.Max();
+            Console.WriteLine($"The biggest number is: {max}");
+        }
+        static void Bai_7_3()
+        {
+            Console.Write("Enter the first side:");
+            double side1 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Enter the second side:");
+            double side2 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Enter the third side:");
+            double side3 = Convert.ToDouble(Console.ReadLine());
+            if (side1 == side2 && side3 == side1)
+                Console.WriteLine("The triangle is equilateral triangle");
+            if (side1 == side2 && side3 != side1 || side2 == side3 && side2 != side1 || side3 == side1 && side2 != side1)
+                Console.WriteLine("The triangle is isosceles triangle");
+            if (side3 != side1 && side1 != side2)
+                Console.WriteLine("The triangle is scalene triangle");
+        }
+        static void Bai_7_4()
+        {
+            Console.Write("Enter x=");
+            double x = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Enter y=");
+            double y = Convert.ToDouble(Console.ReadLine());
+            if (x > 0 && y > 0)
+                Console.WriteLine($"The coordinate point ({x};{y}) lies in the first quadrant ");
+            if (x > 0 && y < 0)
+                Console.WriteLine($"The coordinate point ({x};{y}) lies in the fourth quadrant");
+            if (x < 0 && y < 0)
+                Console.WriteLine($"The coordinate point ({x};{y}) lies in the third quadrant");
+            if (x < 0 && y > 0)
+                Console.WriteLine($"The coordinate point ({x};{y}) lies in the second quadrant");
+        }
+        private static void Main(string[] args)
+        {
+            
 
         }
+        
+
+        
+
     }
 }
